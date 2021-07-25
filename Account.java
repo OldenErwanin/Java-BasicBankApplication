@@ -14,7 +14,7 @@ public class Account {
         this.customerID = customerID;
     }
 
-    public boolean deposit(int amount) {
+    private boolean deposit(int amount) {
         if (amount > 0) {
             balance += amount;
             transactions.add(new Transaction("Deposit", amount));
@@ -23,7 +23,7 @@ public class Account {
         return false;
     }
 
-    public boolean withdraw(int amount) {
+    private boolean withdraw(int amount) {
         if ((balance - amount < 0) || (amount <= 0)) {
             return false;
         }
@@ -32,7 +32,7 @@ public class Account {
         return true;
     }
 
-    public void getTransactions() {
+    private void getTransactions() {
         if (transactions.isEmpty()) {
             System.out.println("There is no recorded transaction yet!");
         } else {
